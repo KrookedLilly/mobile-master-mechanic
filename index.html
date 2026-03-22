@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Master Mechanic — 24/7 Mobile Auto Repair | Spokane Valley, WA</title>
+  <meta name="description" content="Broken down? Mobile Master Mechanic comes to you — 24/7 mobile auto repair in Spokane Valley, WA. Call Shawn at (509) 205-5879 for emergency same-day service.">
+  <meta property="og:title" content="Mobile Master Mechanic — 24/7 Mobile Auto Repair">
+  <meta property="og:description" content="We come to your home, office, or roadside. 24/7 mobile auto repair in Spokane Valley. Call (509) 205-5879.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwindcss.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#DC2626',
+            accent: '#F59E0B',
+            dark: '#111827',
+            light: '#F3F4F6',
+            secondary: '#374151',
+          },
+          fontFamily: {
+            heading: ['"Oswald"', 'sans-serif'],
+            body: ['"Roboto"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Mobile Master Mechanic",
+    "description": "24/7 mobile auto repair service in Spokane Valley, WA. We come to your home, office, or roadside.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "17010 E Desmet Ct",
+      "addressLocality": "Spokane Valley",
+      "addressRegion": "WA",
+      "postalCode": "99216",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-509-205-5879",
+    "openingHours": "Mo-Su 00:00-23:59",
+    "url": "",
+    "areaServed": {
+      "@type": "City",
+      "name": "Spokane Valley"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "25"
+    },
+    "priceRange": "$$"
+  }
+  </script>
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
+</head>
+<body class="bg-dark text-light font-body pb-16 md:pb-0">
+
+  <!-- ==================== NAV ==================== -->
+  <nav x-data="{ open: false }" class="bg-dark/95 backdrop-blur-sm border-b border-secondary/50 sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="font-heading text-xl font-bold text-white tracking-wide uppercase">
+        Mobile Master <span class="text-primary">Mechanic</span>
+      </a>
+      <a href="tel:+15092055879" class="hidden md:flex items-center gap-2 bg-primary hover:bg-red-700 text-white font-bold px-4 py-2 rounded transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+        (509) 205-5879
+      </a>
+      <!-- Hamburger -->
+      <button @click="open = !open" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu">
+        <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg x-show="open" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-300">
+        <a href="#services" class="hover:text-white transition-colors">Services</a>
+        <a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a>
+        <a href="#service-area" class="hover:text-white transition-colors">Service Area</a>
+        <a href="#testimonials" class="hover:text-white transition-colors">Reviews</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div x-show="open" x-transition x-cloak class="md:hidden bg-dark border-t border-secondary/50 px-4 pb-4 space-y-3">
+      <a @click="open = false" href="#services" class="block text-gray-300 hover:text-white py-2 border-b border-secondary/30">Services</a>
+      <a @click="open = false" href="#how-it-works" class="block text-gray-300 hover:text-white py-2 border-b border-secondary/30">How It Works</a>
+      <a @click="open = false" href="#service-area" class="block text-gray-300 hover:text-white py-2 border-b border-secondary/30">Service Area</a>
+      <a @click="open = false" href="#testimonials" class="block text-gray-300 hover:text-white py-2 border-b border-secondary/30">Reviews</a>
+      <a @click="open = false" href="#contact" class="block text-gray-300 hover:text-white py-2">Contact</a>
+      <a href="tel:+15092055879" class="block bg-primary text-white text-center font-bold py-3 rounded mt-2">
+        Call Now — (509) 205-5879
+      </a>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="bg-dark relative overflow-hidden">
+    <!-- Subtle background texture -->
+    <div class="absolute inset-0 bg-gradient-to-br from-dark via-secondary/20 to-dark"></div>
+    <div class="relative max-w-6xl mx-auto px-4 py-16 md:py-24 text-center">
+      <!-- 24/7 Badge -->
+      <div class="inline-flex items-center gap-2 bg-accent/20 border border-accent/50 text-accent font-heading font-bold text-sm uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+        <span class="relative flex h-3 w-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
+        </span>
+        Open 24 Hours &bull; 7 Days a Week
+      </div>
+
+      <h1 class="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-white uppercase tracking-tight mb-4">
+        Mobile Master <span class="text-primary">Mechanic</span>
+      </h1>
+      <p class="font-heading text-xl md:text-2xl text-accent uppercase tracking-wide mb-6">
+        24/7 Mobile Auto Repair — We Come To You
+      </p>
+      <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-8">
+        Broken down? Shawn comes to your location — home, office, or roadside. Serving Spokane Valley and the greater Spokane area.
+      </p>
+
+      <!-- MASSIVE PHONE CTA -->
+      <a href="tel:+15092055879" class="inline-flex items-center gap-3 bg-primary hover:bg-red-700 text-white font-heading text-2xl md:text-3xl font-bold px-8 md:px-12 py-5 md:py-6 rounded-lg shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all transform hover:scale-105">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 md:h-10 md:w-10" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+        Call Now — (509) 205-5879
+      </a>
+
+      <p class="text-gray-500 text-sm mt-4">5.0 ★ rated &mdash; 25 Google reviews</p>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICES ==================== -->
+  <section id="services" class="bg-secondary/30 py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-white uppercase text-center mb-4">What We Fix</h2>
+      <p class="text-gray-400 text-center max-w-xl mx-auto mb-12">Professional auto repair that comes to you. No towing needed.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Service Card: Full Diagnostic Scans -->
+        <div class="bg-dark border border-secondary/50 rounded-lg p-6 hover:border-primary/50 transition-colors">
+          <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-white uppercase mb-2">Full Diagnostic Scans</h3>
+          <p class="text-gray-400 text-sm">Advanced computer diagnostics to pinpoint the problem fast, right at your location.</p>
+        </div>
+
+        <!-- Service Card: On-Site Auto Repair -->
+        <div class="bg-dark border border-secondary/50 rounded-lg p-6 hover:border-primary/50 transition-colors">
+          <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.384-3.065A2 2 0 005 13.88V18a2 2 0 002 2h10a2 2 0 002-2v-4.12a2 2 0 00-1.036-1.775L12.58 15.17a2 2 0 01-1.16 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M20 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-white uppercase mb-2">On-Site Auto Repair</h3>
+          <p class="text-gray-400 text-sm">Full repairs done at your home, office, or wherever your vehicle sits. No shop visit required.</p>
+        </div>
+
+        <!-- Service Card: Engine Work -->
+        <div class="bg-dark border border-secondary/50 rounded-lg p-6 hover:border-primary/50 transition-colors">
+          <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-white uppercase mb-2">Engine Work</h3>
+          <p class="text-gray-400 text-sm">From minor tune-ups to major engine repairs, handled with precision and care.</p>
+        </div>
+
+        <!-- Service Card: Electrical Diagnostics -->
+        <div class="bg-dark border border-secondary/50 rounded-lg p-6 hover:border-primary/50 transition-colors">
+          <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-white uppercase mb-2">Electrical Diagnostics</h3>
+          <p class="text-gray-400 text-sm">Tracking down electrical gremlins — battery issues, wiring problems, sensor faults, and more.</p>
+        </div>
+
+        <!-- Service Card: Emergency / Same-Day -->
+        <div class="bg-dark border border-primary/50 rounded-lg p-6 ring-1 ring-primary/30">
+          <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-white uppercase mb-2">Emergency / Same-Day</h3>
+          <p class="text-gray-400 text-sm">Stranded? Call Shawn anytime — 24/7 emergency and same-day service available.</p>
+        </div>
+
+        <!-- Service Card: Mobile Service -->
+        <div class="bg-dark border border-secondary/50 rounded-lg p-6 hover:border-primary/50 transition-colors">
+          <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-white uppercase mb-2">We Come To You</h3>
+          <p class="text-gray-400 text-sm">Home, office, parking lot, or roadside — wherever your vehicle is, that's where we work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== HOW IT WORKS ==================== -->
+  <section id="how-it-works" class="bg-dark py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-white uppercase text-center mb-4">How It Works</h2>
+      <p class="text-gray-400 text-center max-w-xl mx-auto mb-12">Three simple steps to getting back on the road.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4">
+        <!-- Step 1 -->
+        <div class="text-center">
+          <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-primary/30">
+            <span class="font-heading text-3xl font-bold text-white">1</span>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-white uppercase mb-2">Call Shawn</h3>
+          <p class="text-gray-400">Tell us what's going on and where you are. Available 24 hours a day, 7 days a week.</p>
+          <a href="tel:+15092055879" class="inline-block text-primary font-bold mt-2 hover:text-red-400 transition-colors">(509) 205-5879</a>
+        </div>
+
+        <!-- Arrow (hidden on mobile) -->
+        <div class="hidden md:flex items-center justify-center -mt-8">
+          <!-- visual connector handled by grid -->
+        </div>
+
+        <!-- Step 2 -->
+        <div class="text-center">
+          <div class="w-20 h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-accent/30">
+            <span class="font-heading text-3xl font-bold text-white">2</span>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-white uppercase mb-2">We Come To You</h3>
+          <p class="text-gray-400">Shawn drives to your home, office, or wherever you're stranded with a fully equipped service vehicle.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="text-center md:col-start-2 lg:col-start-auto">
+          <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-green-600/30">
+            <span class="font-heading text-3xl font-bold text-white">3</span>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-white uppercase mb-2">Back On The Road</h3>
+          <p class="text-gray-400">Professional repair done on the spot. No towing, no shop waiting rooms, no hassle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICE AREA ==================== -->
+  <section id="service-area" class="bg-secondary/30 py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-white uppercase mb-4">Service Area</h2>
+      <p class="text-gray-400 text-lg mb-6">
+        Serving <span class="text-white font-semibold">Spokane Valley</span> and the <span class="text-white font-semibold">greater Spokane area</span>.
+      </p>
+      <div class="bg-dark border border-secondary/50 rounded-lg p-6 md:p-8 inline-block">
+        <div class="flex items-center gap-3 justify-center mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span class="font-heading text-lg text-white uppercase font-bold">Mobile Service — We Come To You</span>
+        </div>
+        <p class="text-gray-400 text-sm">No need to get your vehicle towed to a shop. Shawn brings the shop to you — whether you're at home, at work, or stuck on the side of the road. If you're in the Spokane area, we can help.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIALS ==================== -->
+  <section id="testimonials" class="bg-dark py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-white uppercase text-center mb-4">What Customers Say</h2>
+      <p class="text-gray-400 text-center mb-12">5.0 ★ average across 25 Google reviews</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <!-- Review 1 -->
+        <div class="bg-secondary/30 border border-secondary/50 rounded-lg p-6">
+          <div class="flex gap-1 text-accent mb-3">
+            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+          </div>
+          <p class="text-white text-lg font-medium mb-3">"So friendly and helpful"</p>
+          <p class="text-gray-500 text-sm">— Satisfied Client</p>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-secondary/30 border border-secondary/50 rounded-lg p-6">
+          <div class="flex gap-1 text-accent mb-3">
+            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+          </div>
+          <p class="text-white text-lg font-medium mb-3">"Very attentive to detail"</p>
+          <p class="text-gray-500 text-sm">— Satisfied Client</p>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-secondary/30 border border-secondary/50 rounded-lg p-6">
+          <div class="flex gap-1 text-accent mb-3">
+            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+          </div>
+          <p class="text-white text-lg font-medium mb-3">"Fast work, not rushed"</p>
+          <p class="text-gray-500 text-sm">— Satisfied Client</p>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="bg-secondary/30 border border-secondary/50 rounded-lg p-6">
+          <div class="flex gap-1 text-accent mb-3">
+            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+          </div>
+          <p class="text-white text-lg font-medium mb-3">"Difference between a mechanic and technician"</p>
+          <p class="text-gray-500 text-sm">— Satisfied Client</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section id="contact" class="bg-secondary/30 py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-white uppercase text-center mb-12">Get In Touch</h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Contact Info -->
+        <div class="space-y-6">
+          <!-- Phone -->
+          <div>
+            <h3 class="font-heading text-lg font-bold text-white uppercase mb-2">Call Shawn</h3>
+            <a href="tel:+15092055879" class="inline-flex items-center gap-3 text-primary text-2xl md:text-3xl font-heading font-bold hover:text-red-400 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+              (509) 205-5879
+            </a>
+          </div>
+
+          <!-- Hours -->
+          <div>
+            <h3 class="font-heading text-lg font-bold text-white uppercase mb-2">Hours</h3>
+            <div class="inline-flex items-center gap-2 bg-accent/20 border border-accent/40 text-accent font-bold text-sm uppercase tracking-wide px-3 py-1.5 rounded">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+              </span>
+              Open 24 Hours — 7 Days a Week
+            </div>
+          </div>
+
+          <!-- Address -->
+          <div>
+            <h3 class="font-heading text-lg font-bold text-white uppercase mb-2">Base Location</h3>
+            <p class="text-gray-400">17010 E Desmet Ct<br>Spokane Valley, WA 99216</p>
+            <p class="text-gray-500 text-sm mt-1">Mobile service — we come to your location</p>
+          </div>
+        </div>
+
+        <!-- Google Map -->
+        <div class="rounded-lg overflow-hidden border border-secondary/50 h-72 lg:h-full min-h-[288px]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2685.0!2d-117.239!3d47.668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTcwMTAgRSBEZXNtZXQgQ3QsIFNwb2thbmUgVmFsbGV5LCBXQSA5OTIxNg!5e0!3m2!1sen!2sus!4v1"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mobile Master Mechanic location on Google Maps"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-dark border-t border-secondary/50 py-8">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <p class="font-heading text-lg font-bold text-white uppercase tracking-wide mb-2">
+        Mobile Master <span class="text-primary">Mechanic</span>
+      </p>
+      <a href="tel:+15092055879" class="text-gray-400 hover:text-primary transition-colors">(509) 205-5879</a>
+      <div class="flex justify-center gap-6 mt-4 text-sm text-gray-500">
+        <a href="#services" class="hover:text-gray-300 transition-colors">Services</a>
+        <a href="#how-it-works" class="hover:text-gray-300 transition-colors">How It Works</a>
+        <a href="#testimonials" class="hover:text-gray-300 transition-colors">Reviews</a>
+        <a href="#contact" class="hover:text-gray-300 transition-colors">Contact</a>
+      </div>
+      <p class="text-gray-600 text-xs mt-6">Spokane Valley, WA &mdash; Serving the greater Spokane area 24/7</p>
+    </div>
+  </footer>
+
+  <!-- ==================== STICKY CLICK-TO-CALL (Mobile) ==================== -->
+  <a href="tel:+15092055879" class="fixed bottom-0 inset-x-0 bg-primary text-white text-center py-4 text-lg font-heading font-bold md:hidden z-50 shadow-lg shadow-primary/40 flex items-center justify-center gap-2">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+    Call Now — (509) 205-5879
+  </a>
+
+  <!-- Alpine.js x-cloak style -->
+  <style>[x-cloak] { display: none !important; }</style>
+
+</body>
+</html>
