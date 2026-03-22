@@ -22,13 +22,13 @@
         extend: {
           colors: {
             primary: '#DC2626',
-            'primary-dark': '#B91C1C',
+            'primary-hover': '#B91C1C',
             accent: '#F59E0B',
-            'accent-dark': '#D97706',
-            dark: '#111827',
-            'dark-lighter': '#1F2937',
-            light: '#F3F4F6',
-            secondary: '#374151',
+            'accent-hover': '#D97706',
+            base: '#111827',
+            'base-light': '#1F2937',
+            surface: '#F3F4F6',
+            muted: '#374151',
           },
           fontFamily: {
             heading: ['"Oswald"', 'sans-serif'],
@@ -105,13 +105,13 @@
     [x-cloak] { display: none !important; }
   </style>
 </head>
-<body class="bg-dark text-light font-body pb-16 md:pb-0">
+<body class="bg-gray-900 text-gray-100 font-body pb-16 md:pb-0">
 
   <!-- ==================== NAV ==================== -->
-  <nav x-data="{ open: false }" class="bg-dark/95 backdrop-blur-sm border-b border-secondary/50 sticky top-0 z-40">
+  <nav x-data="{ open: false }" class="bg-gray-900/95 backdrop-blur-sm border-b border-gray-600/50 sticky top-0 z-40">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="#" class="font-heading text-xl font-bold text-white tracking-wide uppercase">
-        Mobile Master <span class="text-primary">Mechanic</span>
+        Mobile Master <span class="text-red-600">Mechanic</span>
       </a>
       <!-- Desktop nav -->
       <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-300">
@@ -123,7 +123,7 @@
         <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
         <a href="#contact" class="hover:text-white transition-colors">Contact</a>
       </div>
-      <a href="tel:+15092055879" class="hidden md:flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold px-4 py-2 rounded transition-colors">
+      <a href="tel:+15092055879" class="hidden md:flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
         (509) 205-5879
       </a>
@@ -134,15 +134,15 @@
       </button>
     </div>
     <!-- Mobile menu -->
-    <div x-show="open" x-transition x-cloak class="md:hidden bg-dark border-t border-secondary/50 px-4 pb-4 space-y-1">
-      <a @click="open = false" href="#services" class="block text-gray-300 hover:text-white py-3 border-b border-secondary/30">Services</a>
-      <a @click="open = false" href="#how-it-works" class="block text-gray-300 hover:text-white py-3 border-b border-secondary/30">How It Works</a>
-      <a @click="open = false" href="#about" class="block text-gray-300 hover:text-white py-3 border-b border-secondary/30">About Shawn</a>
-      <a @click="open = false" href="#service-area" class="block text-gray-300 hover:text-white py-3 border-b border-secondary/30">Service Area</a>
-      <a @click="open = false" href="#testimonials" class="block text-gray-300 hover:text-white py-3 border-b border-secondary/30">Reviews</a>
-      <a @click="open = false" href="#faq" class="block text-gray-300 hover:text-white py-3 border-b border-secondary/30">FAQ</a>
+    <div x-show="open" x-transition x-cloak class="md:hidden bg-gray-900 border-t border-gray-600/50 px-4 pb-4 space-y-1">
+      <a @click="open = false" href="#services" class="block text-gray-300 hover:text-white py-3 border-b border-gray-600/30">Services</a>
+      <a @click="open = false" href="#how-it-works" class="block text-gray-300 hover:text-white py-3 border-b border-gray-600/30">How It Works</a>
+      <a @click="open = false" href="#about" class="block text-gray-300 hover:text-white py-3 border-b border-gray-600/30">About Shawn</a>
+      <a @click="open = false" href="#service-area" class="block text-gray-300 hover:text-white py-3 border-b border-gray-600/30">Service Area</a>
+      <a @click="open = false" href="#testimonials" class="block text-gray-300 hover:text-white py-3 border-b border-gray-600/30">Reviews</a>
+      <a @click="open = false" href="#faq" class="block text-gray-300 hover:text-white py-3 border-b border-gray-600/30">FAQ</a>
       <a @click="open = false" href="#contact" class="block text-gray-300 hover:text-white py-3">Contact</a>
-      <a href="tel:+15092055879" class="block bg-primary text-white text-center font-bold py-3 rounded mt-3">
+      <a href="tel:+15092055879" class="block bg-red-600 text-white text-center font-bold py-3 rounded mt-3">
         Call Now — (509) 205-5879
       </a>
     </div>
@@ -151,25 +151,25 @@
   <!-- ==================== HERO ==================== -->
   <section class="relative overflow-hidden">
     <!-- Background with gradient overlay -->
-    <div class="absolute inset-0 bg-gradient-to-br from-dark via-dark-lighter/80 to-dark"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800-lighter/80 to-gray-900"></div>
     <!-- Subtle grid pattern -->
     <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
 
     <div class="relative max-w-6xl mx-auto px-4 py-20 md:py-28 lg:py-32">
       <div class="max-w-3xl mx-auto text-center">
         <!-- 24/7 Badge -->
-        <div class="inline-flex items-center gap-2 bg-accent/15 border border-accent/40 text-accent font-heading font-bold text-sm uppercase tracking-widest px-5 py-2.5 rounded-full mb-8">
+        <div class="inline-flex items-center gap-2 bg-amber-500/15 border border-amber-500/40 text-amber-500 font-heading font-bold text-sm uppercase tracking-widest px-5 py-2.5 rounded-full mb-8">
           <span class="relative flex h-3 w-3">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
           </span>
           Open 24 Hours &bull; 7 Days a Week
         </div>
 
         <h1 class="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white uppercase tracking-tight leading-none mb-6">
-          Mobile Master<br><span class="text-primary">Mechanic</span>
+          Mobile Master<br><span class="text-red-600">Mechanic</span>
         </h1>
-        <p class="font-heading text-xl md:text-2xl text-accent uppercase tracking-wide mb-4">
+        <p class="font-heading text-xl md:text-2xl text-amber-500 uppercase tracking-wide mb-4">
           24/7 Mobile Auto Repair — We Come To You
         </p>
         <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
@@ -177,7 +177,7 @@
         </p>
 
         <!-- MASSIVE PHONE CTA -->
-        <a href="tel:+15092055879" class="inline-flex items-center gap-3 bg-primary hover:bg-primary-dark text-white font-heading text-2xl md:text-3xl font-bold px-10 md:px-14 py-5 md:py-6 rounded-xl shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all transform hover:scale-[1.03] active:scale-[0.98]">
+        <a href="tel:+15092055879" class="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-heading text-2xl md:text-3xl font-bold px-10 md:px-14 py-5 md:py-6 rounded-xl shadow-lg shadow-red-600/25 hover:shadow-red-600/40 transition-all transform hover:scale-[1.03] active:scale-[0.98]">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 md:h-10 md:w-10" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
           (509) 205-5879
         </a>
@@ -186,15 +186,15 @@
         <!-- Trust indicators -->
         <div class="flex flex-wrap items-center justify-center gap-6 mt-10 text-sm text-gray-400">
           <div class="flex items-center gap-1.5">
-            <span class="text-accent">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="text-amber-500">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
             <span>5.0 Rating</span>
           </div>
           <div class="flex items-center gap-1.5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             <span>25 Google Reviews</span>
           </div>
           <div class="flex items-center gap-1.5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             <span>Spokane Valley &amp; Beyond</span>
           </div>
         </div>
@@ -203,7 +203,7 @@
   </section>
 
   <!-- ==================== SERVICES ==================== -->
-  <section id="services" class="bg-dark-lighter/50 py-20 md:py-24">
+  <section id="services" class="bg-gray-800/50 py-20 md:py-24">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-14">
         <h2 class="font-heading text-3xl md:text-4xl font-bold text-white uppercase mb-3">What We Fix</h2>
@@ -212,59 +212,59 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         <!-- Full Diagnostic Scans -->
-        <div class="bg-dark border border-secondary/40 rounded-xl p-6 hover:border-primary/40 transition-all group">
-          <div class="w-12 h-12 bg-primary/10 group-hover:bg-primary/20 rounded-lg flex items-center justify-center mb-4 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        <div class="bg-gray-900 border border-gray-600/40 rounded-xl p-6 hover:border-red-600/40 transition-all group">
+          <div class="w-12 h-12 bg-red-600/10 group-hover:bg-red-600/20 rounded-lg flex items-center justify-center mb-4 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
           </div>
           <h3 class="font-heading text-lg font-bold text-white uppercase mb-2">Full Diagnostic Scans</h3>
           <p class="text-gray-400 text-sm leading-relaxed">Advanced OBD-II computer diagnostics to pinpoint check engine lights, sensor faults, and performance issues — right at your location.</p>
         </div>
 
         <!-- On-Site Auto Repair -->
-        <div class="bg-dark border border-secondary/40 rounded-xl p-6 hover:border-primary/40 transition-all group">
-          <div class="w-12 h-12 bg-primary/10 group-hover:bg-primary/20 rounded-lg flex items-center justify-center mb-4 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <div class="bg-gray-900 border border-gray-600/40 rounded-xl p-6 hover:border-red-600/40 transition-all group">
+          <div class="w-12 h-12 bg-red-600/10 group-hover:bg-red-600/20 rounded-lg flex items-center justify-center mb-4 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
           </div>
           <h3 class="font-heading text-lg font-bold text-white uppercase mb-2">On-Site Auto Repair</h3>
           <p class="text-gray-400 text-sm leading-relaxed">Full mechanical repairs done wherever your vehicle sits — your driveway, office parking lot, or apartment complex. No shop visit needed.</p>
         </div>
 
         <!-- Engine Work -->
-        <div class="bg-dark border border-secondary/40 rounded-xl p-6 hover:border-primary/40 transition-all group">
-          <div class="w-12 h-12 bg-primary/10 group-hover:bg-primary/20 rounded-lg flex items-center justify-center mb-4 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        <div class="bg-gray-900 border border-gray-600/40 rounded-xl p-6 hover:border-red-600/40 transition-all group">
+          <div class="w-12 h-12 bg-red-600/10 group-hover:bg-red-600/20 rounded-lg flex items-center justify-center mb-4 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           </div>
           <h3 class="font-heading text-lg font-bold text-white uppercase mb-2">Engine Work</h3>
           <p class="text-gray-400 text-sm leading-relaxed">From tune-ups and timing belts to major engine repairs. Thorough, precise work — fast but never rushed.</p>
         </div>
 
         <!-- Electrical Diagnostics -->
-        <div class="bg-dark border border-secondary/40 rounded-xl p-6 hover:border-primary/40 transition-all group">
-          <div class="w-12 h-12 bg-primary/10 group-hover:bg-primary/20 rounded-lg flex items-center justify-center mb-4 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        <div class="bg-gray-900 border border-gray-600/40 rounded-xl p-6 hover:border-red-600/40 transition-all group">
+          <div class="w-12 h-12 bg-red-600/10 group-hover:bg-red-600/20 rounded-lg flex items-center justify-center mb-4 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
           </div>
           <h3 class="font-heading text-lg font-bold text-white uppercase mb-2">Electrical Diagnostics</h3>
           <p class="text-gray-400 text-sm leading-relaxed">Tracking down electrical gremlins — dead batteries, faulty alternators, wiring problems, sensor faults, and no-start conditions.</p>
         </div>
 
         <!-- Brakes & Maintenance -->
-        <div class="bg-dark border border-secondary/40 rounded-xl p-6 hover:border-primary/40 transition-all group">
-          <div class="w-12 h-12 bg-primary/10 group-hover:bg-primary/20 rounded-lg flex items-center justify-center mb-4 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+        <div class="bg-gray-900 border border-gray-600/40 rounded-xl p-6 hover:border-red-600/40 transition-all group">
+          <div class="w-12 h-12 bg-red-600/10 group-hover:bg-red-600/20 rounded-lg flex items-center justify-center mb-4 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
           </div>
           <h3 class="font-heading text-lg font-bold text-white uppercase mb-2">Brakes &amp; Maintenance</h3>
           <p class="text-gray-400 text-sm leading-relaxed">Brake pads, rotors, oil changes, battery replacements, fluid flushes, belts, and routine maintenance — done at your convenience.</p>
         </div>
 
         <!-- Emergency / Same-Day -->
-        <div class="bg-dark border-2 border-primary/60 rounded-xl p-6 relative overflow-hidden">
-          <div class="absolute top-0 right-0 bg-primary text-white text-xs font-heading font-bold uppercase tracking-wider px-3 py-1 rounded-bl-lg">24/7</div>
-          <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <div class="bg-gray-900 border-2 border-red-600/60 rounded-xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 right-0 bg-red-600 text-white text-xs font-heading font-bold uppercase tracking-wider px-3 py-1 rounded-bl-lg">24/7</div>
+          <div class="w-12 h-12 bg-red-600/20 rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
           <h3 class="font-heading text-lg font-bold text-white uppercase mb-2">Emergency / Same-Day</h3>
           <p class="text-gray-400 text-sm leading-relaxed">Stranded at 2 AM? Call Shawn anytime. Emergency and same-day service available around the clock, every day of the year.</p>
-          <a href="tel:+15092055879" class="inline-flex items-center gap-2 text-primary font-bold text-sm mt-3 hover:text-red-400 transition-colors">
+          <a href="tel:+15092055879" class="inline-flex items-center gap-2 text-red-600 font-bold text-sm mt-3 hover:text-red-400 transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
             Call Now
           </a>
@@ -274,7 +274,7 @@
   </section>
 
   <!-- ==================== HOW IT WORKS ==================== -->
-  <section id="how-it-works" class="bg-dark py-20 md:py-24">
+  <section id="how-it-works" class="bg-gray-900 py-20 md:py-24">
     <div class="max-w-5xl mx-auto px-4">
       <div class="text-center mb-14">
         <h2 class="font-heading text-3xl md:text-4xl font-bold text-white uppercase mb-3">How It Works</h2>
@@ -284,17 +284,17 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Step 1 -->
         <div class="text-center relative">
-          <div class="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-primary/20 rotate-3">
+          <div class="w-20 h-20 bg-red-600 rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-red-600/20 rotate-3">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white -rotate-3" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
           </div>
           <!-- Connector arrow (desktop) -->
-          <div class="hidden md:block absolute top-10 -right-4 w-8 text-secondary/60">
+          <div class="hidden md:block absolute top-10 -right-4 w-8 text-gray-700/60">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
           </div>
-          <div class="font-heading text-xs font-bold text-primary uppercase tracking-widest mb-2">Step 1</div>
+          <div class="font-heading text-xs font-bold text-red-600 uppercase tracking-widest mb-2">Step 1</div>
           <h3 class="font-heading text-xl font-bold text-white uppercase mb-3">Call Shawn</h3>
           <p class="text-gray-400 leading-relaxed mb-3">Tell us what's going on and where you are. Don't worry — Shawn has heard it all and can help.</p>
-          <a href="tel:+15092055879" class="inline-flex items-center gap-2 text-primary font-bold hover:text-red-400 transition-colors">
+          <a href="tel:+15092055879" class="inline-flex items-center gap-2 text-red-600 font-bold hover:text-red-400 transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
             (509) 205-5879
           </a>
@@ -302,14 +302,14 @@
 
         <!-- Step 2 -->
         <div class="text-center relative">
-          <div class="w-20 h-20 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-accent/20 -rotate-2">
+          <div class="w-20 h-20 bg-amber-500 rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-amber-500/20 -rotate-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white rotate-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
           </div>
           <!-- Connector arrow (desktop) -->
-          <div class="hidden md:block absolute top-10 -right-4 w-8 text-secondary/60">
+          <div class="hidden md:block absolute top-10 -right-4 w-8 text-gray-700/60">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
           </div>
-          <div class="font-heading text-xs font-bold text-accent uppercase tracking-widest mb-2">Step 2</div>
+          <div class="font-heading text-xs font-bold text-amber-500 uppercase tracking-widest mb-2">Step 2</div>
           <h3 class="font-heading text-xl font-bold text-white uppercase mb-3">We Come To You</h3>
           <p class="text-gray-400 leading-relaxed">Shawn drives to your location with a fully equipped service vehicle. Home, office, parking lot, or roadside — wherever you are.</p>
         </div>
@@ -328,16 +328,16 @@
   </section>
 
   <!-- ==================== ABOUT SHAWN ==================== -->
-  <section id="about" class="bg-dark-lighter/50 py-20 md:py-24">
+  <section id="about" class="bg-gray-800/50 py-20 md:py-24">
     <div class="max-w-5xl mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <!-- Photo placeholder -->
-        <div class="bg-secondary/30 rounded-xl aspect-[4/3] flex items-center justify-center text-gray-500 text-sm italic border border-secondary/40">
+        <div class="bg-gray-700/30 rounded-xl aspect-[4/3] flex items-center justify-center text-gray-500 text-sm italic border border-gray-600/40">
           Photo: Shawn with his mobile service vehicle
         </div>
 
         <div>
-          <div class="font-heading text-xs font-bold text-primary uppercase tracking-widest mb-3">Meet Your Mechanic</div>
+          <div class="font-heading text-xs font-bold text-red-600 uppercase tracking-widest mb-3">Meet Your Mechanic</div>
           <h2 class="font-heading text-3xl md:text-4xl font-bold text-white uppercase mb-6">Shawn — Owner &amp; Operator</h2>
           <div class="space-y-4 text-gray-400 leading-relaxed">
             <p>
@@ -353,15 +353,15 @@
 
           <!-- Quick stats -->
           <div class="grid grid-cols-3 gap-4 mt-8">
-            <div class="bg-dark rounded-lg p-4 text-center border border-secondary/40">
-              <div class="font-heading text-2xl font-bold text-primary">5.0</div>
+            <div class="bg-gray-900 rounded-lg p-4 text-center border border-gray-600/40">
+              <div class="font-heading text-2xl font-bold text-red-600">5.0</div>
               <div class="text-gray-500 text-xs uppercase tracking-wide mt-1">Star Rating</div>
             </div>
-            <div class="bg-dark rounded-lg p-4 text-center border border-secondary/40">
-              <div class="font-heading text-2xl font-bold text-accent">24/7</div>
+            <div class="bg-gray-900 rounded-lg p-4 text-center border border-gray-600/40">
+              <div class="font-heading text-2xl font-bold text-amber-500">24/7</div>
               <div class="text-gray-500 text-xs uppercase tracking-wide mt-1">Availability</div>
             </div>
-            <div class="bg-dark rounded-lg p-4 text-center border border-secondary/40">
+            <div class="bg-gray-900 rounded-lg p-4 text-center border border-gray-600/40">
               <div class="font-heading text-2xl font-bold text-green-500">25</div>
               <div class="text-gray-500 text-xs uppercase tracking-wide mt-1">Reviews</div>
             </div>
@@ -372,7 +372,7 @@
   </section>
 
   <!-- ==================== SERVICE AREA ==================== -->
-  <section id="service-area" class="bg-dark py-20 md:py-24">
+  <section id="service-area" class="bg-gray-900 py-20 md:py-24">
     <div class="max-w-5xl mx-auto px-4">
       <div class="text-center mb-14">
         <h2 class="font-heading text-3xl md:text-4xl font-bold text-white uppercase mb-3">Service Area</h2>
@@ -382,17 +382,17 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
         <!-- Areas served -->
         <div class="space-y-4">
-          <div class="bg-dark-lighter border border-secondary/40 rounded-xl p-5 flex items-center gap-4">
-            <div class="w-10 h-10 bg-primary/15 rounded-lg flex items-center justify-center flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <div class="bg-gray-800 border border-gray-600/40 rounded-xl p-5 flex items-center gap-4">
+            <div class="w-10 h-10 bg-red-600/15 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             </div>
             <div>
               <div class="font-heading font-bold text-white uppercase">Spokane Valley</div>
               <div class="text-gray-500 text-sm">Home base — fastest response times</div>
             </div>
           </div>
-          <div class="bg-dark-lighter border border-secondary/40 rounded-xl p-5 flex items-center gap-4">
-            <div class="w-10 h-10 bg-secondary/40 rounded-lg flex items-center justify-center flex-shrink-0">
+          <div class="bg-gray-800 border border-gray-600/40 rounded-xl p-5 flex items-center gap-4">
+            <div class="w-10 h-10 bg-gray-700/40 rounded-lg flex items-center justify-center flex-shrink-0">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             </div>
             <div>
@@ -400,8 +400,8 @@
               <div class="text-gray-500 text-sm">Downtown, South Hill, North Side</div>
             </div>
           </div>
-          <div class="bg-dark-lighter border border-secondary/40 rounded-xl p-5 flex items-center gap-4">
-            <div class="w-10 h-10 bg-secondary/40 rounded-lg flex items-center justify-center flex-shrink-0">
+          <div class="bg-gray-800 border border-gray-600/40 rounded-xl p-5 flex items-center gap-4">
+            <div class="w-10 h-10 bg-gray-700/40 rounded-lg flex items-center justify-center flex-shrink-0">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             </div>
             <div>
@@ -412,9 +412,9 @@
         </div>
 
         <!-- Mobile service callout -->
-        <div class="bg-gradient-to-br from-primary/10 to-accent/5 border border-primary/20 rounded-xl p-8">
+        <div class="bg-gradient-to-br from-primary/10 to-accent/5 border border-red-600/20 rounded-xl p-8">
           <div class="flex items-center gap-3 mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"/></svg>
             <h3 class="font-heading text-xl font-bold text-white uppercase">The Shop Comes To You</h3>
           </div>
           <p class="text-gray-400 leading-relaxed mb-4">
@@ -444,20 +444,20 @@
   </section>
 
   <!-- ==================== TESTIMONIALS ==================== -->
-  <section id="testimonials" class="bg-dark-lighter/50 py-20 md:py-24">
+  <section id="testimonials" class="bg-gray-800/50 py-20 md:py-24">
     <div class="max-w-5xl mx-auto px-4">
       <div class="text-center mb-14">
         <h2 class="font-heading text-3xl md:text-4xl font-bold text-white uppercase mb-3">What Customers Say</h2>
         <div class="flex items-center justify-center gap-2">
-          <span class="text-accent text-lg">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="text-amber-500 text-lg">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
           <span class="text-gray-400">5.0 average across 25 Google reviews</span>
         </div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
         <!-- Review 1 -->
-        <div class="bg-dark border border-secondary/40 rounded-xl p-6">
-          <div class="flex gap-0.5 text-accent mb-4 text-sm">
+        <div class="bg-gray-900 border border-gray-600/40 rounded-xl p-6">
+          <div class="flex gap-0.5 text-amber-500 mb-4 text-sm">
             <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
           </div>
           <blockquote class="text-white text-lg font-medium mb-4 leading-relaxed">"So friendly and helpful"</blockquote>
@@ -468,8 +468,8 @@
         </div>
 
         <!-- Review 2 -->
-        <div class="bg-dark border border-secondary/40 rounded-xl p-6">
-          <div class="flex gap-0.5 text-accent mb-4 text-sm">
+        <div class="bg-gray-900 border border-gray-600/40 rounded-xl p-6">
+          <div class="flex gap-0.5 text-amber-500 mb-4 text-sm">
             <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
           </div>
           <blockquote class="text-white text-lg font-medium mb-4 leading-relaxed">"Very attentive to detail"</blockquote>
@@ -480,8 +480,8 @@
         </div>
 
         <!-- Review 3 -->
-        <div class="bg-dark border border-secondary/40 rounded-xl p-6">
-          <div class="flex gap-0.5 text-accent mb-4 text-sm">
+        <div class="bg-gray-900 border border-gray-600/40 rounded-xl p-6">
+          <div class="flex gap-0.5 text-amber-500 mb-4 text-sm">
             <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
           </div>
           <blockquote class="text-white text-lg font-medium mb-4 leading-relaxed">"Fast work, not rushed"</blockquote>
@@ -492,8 +492,8 @@
         </div>
 
         <!-- Review 4 -->
-        <div class="bg-dark border border-secondary/40 rounded-xl p-6">
-          <div class="flex gap-0.5 text-accent mb-4 text-sm">
+        <div class="bg-gray-900 border border-gray-600/40 rounded-xl p-6">
+          <div class="flex gap-0.5 text-amber-500 mb-4 text-sm">
             <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
           </div>
           <blockquote class="text-white text-lg font-medium mb-4 leading-relaxed">"The difference between a mechanic and a technician"</blockquote>
@@ -507,7 +507,7 @@
   </section>
 
   <!-- ==================== FAQ ==================== -->
-  <section id="faq" class="bg-dark py-20 md:py-24">
+  <section id="faq" class="bg-gray-900 py-20 md:py-24">
     <div class="max-w-3xl mx-auto px-4">
       <div class="text-center mb-14">
         <h2 class="font-heading text-3xl md:text-4xl font-bold text-white uppercase mb-3">Common Questions</h2>
@@ -515,7 +515,7 @@
 
       <div x-data="{ active: null }" class="space-y-3">
         <!-- FAQ 1 -->
-        <div class="bg-dark-lighter border border-secondary/40 rounded-xl overflow-hidden">
+        <div class="bg-gray-800 border border-gray-600/40 rounded-xl overflow-hidden">
           <button @click="active = active === 1 ? null : 1" class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none">
             <span class="font-heading font-bold text-white uppercase text-sm">What areas do you serve?</span>
             <svg :class="active === 1 ? 'rotate-180' : ''" class="h-5 w-5 text-gray-500 transition-transform flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
@@ -526,7 +526,7 @@
         </div>
 
         <!-- FAQ 2 -->
-        <div class="bg-dark-lighter border border-secondary/40 rounded-xl overflow-hidden">
+        <div class="bg-gray-800 border border-gray-600/40 rounded-xl overflow-hidden">
           <button @click="active = active === 2 ? null : 2" class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none">
             <span class="font-heading font-bold text-white uppercase text-sm">Are you really available 24/7?</span>
             <svg :class="active === 2 ? 'rotate-180' : ''" class="h-5 w-5 text-gray-500 transition-transform flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
@@ -537,7 +537,7 @@
         </div>
 
         <!-- FAQ 3 -->
-        <div class="bg-dark-lighter border border-secondary/40 rounded-xl overflow-hidden">
+        <div class="bg-gray-800 border border-gray-600/40 rounded-xl overflow-hidden">
           <button @click="active = active === 3 ? null : 3" class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none">
             <span class="font-heading font-bold text-white uppercase text-sm">What types of vehicles do you work on?</span>
             <svg :class="active === 3 ? 'rotate-180' : ''" class="h-5 w-5 text-gray-500 transition-transform flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
@@ -548,7 +548,7 @@
         </div>
 
         <!-- FAQ 4 -->
-        <div class="bg-dark-lighter border border-secondary/40 rounded-xl overflow-hidden">
+        <div class="bg-gray-800 border border-gray-600/40 rounded-xl overflow-hidden">
           <button @click="active = active === 4 ? null : 4" class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none">
             <span class="font-heading font-bold text-white uppercase text-sm">Do I need to have my car towed to a shop?</span>
             <svg :class="active === 4 ? 'rotate-180' : ''" class="h-5 w-5 text-gray-500 transition-transform flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
@@ -559,7 +559,7 @@
         </div>
 
         <!-- FAQ 5 -->
-        <div class="bg-dark-lighter border border-secondary/40 rounded-xl overflow-hidden">
+        <div class="bg-gray-800 border border-gray-600/40 rounded-xl overflow-hidden">
           <button @click="active = active === 5 ? null : 5" class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none">
             <span class="font-heading font-bold text-white uppercase text-sm">How much does a service call cost?</span>
             <svg :class="active === 5 ? 'rotate-180' : ''" class="h-5 w-5 text-gray-500 transition-transform flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
@@ -570,7 +570,7 @@
         </div>
 
         <!-- FAQ 6 -->
-        <div class="bg-dark-lighter border border-secondary/40 rounded-xl overflow-hidden">
+        <div class="bg-gray-800 border border-gray-600/40 rounded-xl overflow-hidden">
           <button @click="active = active === 6 ? null : 6" class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none">
             <span class="font-heading font-bold text-white uppercase text-sm">What payment methods do you accept?</span>
             <svg :class="active === 6 ? 'rotate-180' : ''" class="h-5 w-5 text-gray-500 transition-transform flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
@@ -584,7 +584,7 @@
   </section>
 
   <!-- ==================== CONTACT ==================== -->
-  <section id="contact" class="bg-dark-lighter/50 py-20 md:py-24">
+  <section id="contact" class="bg-gray-800/50 py-20 md:py-24">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-14">
         <h2 class="font-heading text-3xl md:text-4xl font-bold text-white uppercase mb-3">Get In Touch</h2>
@@ -596,10 +596,10 @@
         <div class="space-y-8">
           <!-- Phone -->
           <div>
-            <div class="font-heading text-xs font-bold text-primary uppercase tracking-widest mb-3">Call Shawn</div>
-            <a href="tel:+15092055879" class="inline-flex items-center gap-3 text-white text-3xl md:text-4xl font-heading font-bold hover:text-primary transition-colors">
-              <div class="w-14 h-14 bg-primary/15 rounded-xl flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-primary" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+            <div class="font-heading text-xs font-bold text-red-600 uppercase tracking-widest mb-3">Call Shawn</div>
+            <a href="tel:+15092055879" class="inline-flex items-center gap-3 text-white text-3xl md:text-4xl font-heading font-bold hover:text-red-600 transition-colors">
+              <div class="w-14 h-14 bg-red-600/15 rounded-xl flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-red-600" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
               </div>
               (509) 205-5879
             </a>
@@ -607,11 +607,11 @@
 
           <!-- Hours -->
           <div>
-            <div class="font-heading text-xs font-bold text-primary uppercase tracking-widest mb-3">Hours</div>
-            <div class="inline-flex items-center gap-2 bg-accent/10 border border-accent/30 text-accent font-heading font-bold text-sm uppercase tracking-wide px-4 py-2 rounded-lg">
+            <div class="font-heading text-xs font-bold text-red-600 uppercase tracking-widest mb-3">Hours</div>
+            <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-500 font-heading font-bold text-sm uppercase tracking-wide px-4 py-2 rounded-lg">
               <span class="relative flex h-2.5 w-2.5">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent"></span>
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-500"></span>
               </span>
               Open 24 Hours — 7 Days a Week
             </div>
@@ -619,7 +619,7 @@
 
           <!-- Address -->
           <div>
-            <div class="font-heading text-xs font-bold text-primary uppercase tracking-widest mb-3">Base Location</div>
+            <div class="font-heading text-xs font-bold text-red-600 uppercase tracking-widest mb-3">Base Location</div>
             <p class="text-gray-300 text-lg">17010 E Desmet Ct</p>
             <p class="text-gray-300 text-lg">Spokane Valley, WA 99216</p>
             <p class="text-gray-500 text-sm mt-2">Mobile service — Shawn comes to your location</p>
@@ -627,7 +627,7 @@
         </div>
 
         <!-- Google Map -->
-        <div class="rounded-xl overflow-hidden border border-secondary/40 h-80 lg:h-full min-h-[320px]">
+        <div class="rounded-xl overflow-hidden border border-gray-600/40 h-80 lg:h-full min-h-[320px]">
           <iframe
             src="https://www.google.com/maps?q=17010+E+Desmet+Ct,+Spokane+Valley,+WA+99216&output=embed"
             width="100%"
@@ -644,11 +644,11 @@
   </section>
 
   <!-- ==================== FINAL CTA ==================== -->
-  <section class="bg-gradient-to-r from-primary-dark to-primary py-14 md:py-16">
+  <section class="bg-gradient-to-r from-red-700 to-primary py-14 md:py-16">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="font-heading text-2xl md:text-3xl font-bold text-white uppercase mb-4">Broken Down? Don't Stress.</h2>
       <p class="text-red-100/80 text-lg mb-8 max-w-xl mx-auto">Shawn is available right now. One call and he's on his way to your location with everything needed to fix your vehicle.</p>
-      <a href="tel:+15092055879" class="inline-flex items-center gap-3 bg-white text-primary font-heading text-xl md:text-2xl font-bold px-10 py-5 rounded-xl shadow-lg hover:bg-gray-100 transition-colors transform hover:scale-[1.03] active:scale-[0.98]">
+      <a href="tel:+15092055879" class="inline-flex items-center gap-3 bg-white text-red-600 font-heading text-xl md:text-2xl font-bold px-10 py-5 rounded-xl shadow-lg hover:bg-gray-100 transition-colors transform hover:scale-[1.03] active:scale-[0.98]">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
         Call (509) 205-5879
       </a>
@@ -656,13 +656,13 @@
   </section>
 
   <!-- ==================== FOOTER ==================== -->
-  <footer class="bg-dark border-t border-secondary/50 py-10">
+  <footer class="bg-gray-900 border-t border-gray-600/50 py-10">
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         <!-- Brand -->
         <div>
           <p class="font-heading text-lg font-bold text-white uppercase tracking-wide mb-2">
-            Mobile Master <span class="text-primary">Mechanic</span>
+            Mobile Master <span class="text-red-600">Mechanic</span>
           </p>
           <p class="text-gray-500 text-sm leading-relaxed">24/7 mobile auto repair serving Spokane Valley and the greater Spokane area. We come to you.</p>
         </div>
@@ -679,20 +679,20 @@
         <!-- Contact -->
         <div>
           <p class="font-heading text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Contact</p>
-          <a href="tel:+15092055879" class="block text-gray-400 hover:text-primary transition-colors text-sm mb-1">(509) 205-5879</a>
+          <a href="tel:+15092055879" class="block text-gray-400 hover:text-red-600 transition-colors text-sm mb-1">(509) 205-5879</a>
           <p class="text-gray-500 text-sm">17010 E Desmet Ct</p>
           <p class="text-gray-500 text-sm">Spokane Valley, WA 99216</p>
           <p class="text-gray-500 text-sm mt-2">Open 24/7</p>
         </div>
       </div>
-      <div class="border-t border-secondary/30 pt-6 text-center">
+      <div class="border-t border-gray-600/30 pt-6 text-center">
         <p class="text-gray-600 text-xs">&copy; 2025 Mobile Master Mechanic. All rights reserved. Spokane Valley, WA.</p>
       </div>
     </div>
   </footer>
 
   <!-- ==================== STICKY CLICK-TO-CALL (Mobile) ==================== -->
-  <a href="tel:+15092055879" class="fixed bottom-0 inset-x-0 bg-primary text-white text-center py-4 text-lg font-heading font-bold md:hidden z-50 shadow-lg shadow-primary/40 flex items-center justify-center gap-2">
+  <a href="tel:+15092055879" class="fixed bottom-0 inset-x-0 bg-red-600 text-white text-center py-4 text-lg font-heading font-bold md:hidden z-50 shadow-lg shadow-red-600/40 flex items-center justify-center gap-2">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
     Call Now — (509) 205-5879
   </a>
